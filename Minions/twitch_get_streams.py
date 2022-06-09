@@ -1,7 +1,7 @@
 ##Summary
-#1. get token: curl -X POST "https://id.twitch.tv/oauth2/token" -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=19zaxqreb96fvg9pnkxou4qtvew1da&client_secret=9zkqhuadipo6ddtc8xvgfkio1uhvh6&grant_type=client_credentials"
+#1. get token: curl -X POST "https://id.twitch.tv/oauth2/token" -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=<ID>&client_secret=<ID>&grant_type=client_credentials"
 #2. extract the token from step 1 then use it to get the streams
-#3. streams: curl -X GET "https://api.twitch.tv/helix/streams" -H "Authorization: Bearer 6avslsam2g08dkcdr89j4yc377p8di" -H "Client-Id: 19zaxqreb96fvg9pnkxou4qtvew1da"
+#3. streams: curl -X GET "https://api.twitch.tv/helix/streams" -H "Authorization: Bearer 6avslsam2g08dkcdr89j4yc377p8di" -H "Client-Id: <ID>"
 #Store what returned from step 3 and get the pagination key from the returned json
 # get the next page of the next top most active streams after the first response -- update after:
 #curl -X GET "https://api.twitch.tv/helix/streams?first=20&after=eyJiIjp7IkN1cnNvciI6ImV5SnpJam94TkRjNE9UTXVNakUwTmpZMk9UUXpPRElzSW1RaU9tWmhiSE5sTENKMElqcDBjblZsZlE9PSJ9LCJhIjp7IkN1cnNvciI6ImV5SnpJam95TWpRek15NHdNRFF3TWpJM05EUTFORFlzSW1RaU9tWmhiSE5sTENKMElqcDBjblZsZlE9PSJ9fQ" -H "Authorization: Bearer <token>" -H "Client-Id: <client_ID>"
